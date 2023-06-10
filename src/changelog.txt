@@ -1,0 +1,14 @@
+container_version=1     # Addition of changelog file on which docker-build automation depends.
+container_version=2     # Minor revision to trigger rebuilding
+container_version=3     # Added API server to listen on PORT 8080
+container_version=4     # Removed API server with PORT 8080
+container_version=5     # Added API server back to listen on PORT 8080 & increased GCR memory to 3GB.
+container_version=6     # Added function which handles API GET requests sent by cloud scheduler, decreased GCR memory to 2GB.
+container_version=7     # Changed function argument.
+container_version=8     # Configured API server to run callback function on POST instead of GET. Changed cloud scheduler invokation to POST.
+container_version=9     # Removed callback function and pathway from API server.
+container_version=10    # Removed callback function and pathway from API server again.
+container_version=11    # Added back callback function with additional app-side server timeout configuration.
+container_version=12    # Removed API server and callback functions altogether.
+container_version=13    # Added API server and callback functions back, disabled CPU throttling and added min instance.
+container_version=14    # Changed location to europe-west4.

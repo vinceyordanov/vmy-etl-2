@@ -1,0 +1,6 @@
+project_id                              = "r-server-326920"
+region                                  = "europe-west4"
+zone                                    = "europe-west4"
+service_account                         = "terraform@r-server-326920.iam.gserviceaccount.com"
+dataset_id                              = "chicago_raw"
+table_id                                = "shotspotter_clean"

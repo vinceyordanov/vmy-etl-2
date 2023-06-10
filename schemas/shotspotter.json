@@ -1,0 +1,97 @@
+[
+    {
+      "mode": "NULLABLE",
+      "name": "timestamp",
+      "type": "TIMESTAMP"
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "event_date",
+      "type": "DATE"
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "block",
+      "type": "STRING"
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "zip_code",
+      "type": "INT64"
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "ward",
+      "type": "INT64"
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "community_area",
+      "type": "STRING"
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "area",
+      "type": "STRING"
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "district",
+      "type": "INT64"
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "unique_id",
+      "type": "STRING"
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "month",
+      "type": "INT64"
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "day_of_week",
+      "type": "INT64"
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "hour",
+      "type": "INT64"
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "incident_type_description",
+      "type": "STRING"
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "rounds",
+      "type": "INT64"
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "illinois_house_district",
+      "type": "INT64"
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "illinois_senate_district",
+      "type": "INT64"
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "latitude",
+      "type": "FLOAT64"
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "longitude",
+      "type": "FLOAT64"
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "server_timestamp",
+      "type": "TIMESTAMP"
+    }
+]

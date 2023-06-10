@@ -1,0 +1,141 @@
+[
+    {
+      "mode": "REQUIRED",
+      "name": "event_id",
+      "type": "STRING",
+      "description": "Unique shotspotter event identifier."
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "event_time",
+      "type": "TIMESTAMP",
+      "description": "Timestamp of when shotspotter event was recorded. (CST)"
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "event_date",
+      "type": "DATE",
+      "description": "Date on which shotspotter event was recorded."
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "event_year",
+      "type": "INT64",
+      "description": "Year on which shotspotter event was recorded."
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "event_month",
+      "type": "INT64",
+      "description": "Month on which shotspotter event was recorded."
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "event_day_of_month",
+      "type": "INT64",
+      "description": "Day of the month on which shotspotter event was recorded."
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "event_day_of_week",
+      "type": "INT64",
+      "description": "Day of the week on which shotspotter event was recorded."
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "day_type",
+      "type": "STRING",
+      "description": "Flag indicating whether event took place on weekday or weekend."
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "hour_of_day",
+      "type": "INT64",
+      "description": "Hour of day during which shotspotter event was recorded."
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "hour_category",
+      "type": "STRING",
+      "description": "Flag which indicates what time of the day event was recorded (morning|afternoon|evening, etc.)."
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "event_type",
+      "type": "STRING",
+      "description": "Description of type of shotspotter event (i.e., shots fired, fireworks, etc.)."
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "rounds_fired",
+      "type": "INT64",
+      "description": "Number of rounds fired during shotspotter event."
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "neighbourhood",
+      "type": "STRING",
+      "description": "Name of the neighbourhood in which shotspotter event was recorded."
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "block",
+      "type": "STRING",
+      "description": "The block number and street name on which shotspotter event was recorded."
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "ward",
+      "type": "INT64",
+      "description": "The police ward in which the shotspotter event was recorded."
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "district",
+      "type": "INT64",
+      "description": "The city district in which the shotspotter event took place."
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "illinois_house_district",
+      "type": "INT64",
+      "description": "The state house district in which the shotspotter event was recorded."
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "illinois_senate_district",
+      "type": "INT64",
+      "description": "The state senate district in which the shotspotter event was recorded."
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "zip_code",
+      "type": "INT64",
+      "description": "The zip code for the area in which shotspotter event was recorded."
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "latitude",
+      "type": "FLOAT64",
+      "description": "The latitude corresponding to the recorded shotspotter event."
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "longitude",
+      "type": "FLOAT64",
+      "description": "The longitude corresponding to the recorded shotspotter event."
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "homicides",
+      "type": "INT64",
+      "description": "The number of homicides (if any) associated with the recorded shotspotter event."
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "is_homicide",
+      "type": "BOOL",
+      "description": "A flag indicating whether or not the recorded shotspotter event led to a homicide."
+    }
+]
+

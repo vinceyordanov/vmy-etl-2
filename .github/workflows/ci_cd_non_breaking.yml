@@ -1,0 +1,90 @@
+name: terraform-nonbreaking-cicd
+run-name: CI/CD Workflow for non-breaking project changes
+
+on:
+  # Triggers the workflow on push events that affect the src, and terraform directories
+  push:
+    paths:
+      - queries/**
+      - terraform/non_breaking/**      
+      - schemas/**
+
+# Defines the terraform job that will sequentially execute the 8 steps below
+jobs:
+
+  terraform:
+    name: 'Terraform'
+    runs-on: ubuntu-latest
+    defaults:  
+      run:
+        shell: bash
+        working-directory: ./terraform/non_breaking
+    steps:
+     
+     # Checkout the repository to the GitHub Actions runner
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      
+    # Initial authentication step which establishes connection between repository (GitHub Actions) and GCP (r-server-326920)
+      - name: 'Authenticate to Google Cloud'
+        id: auth
+        uses: 'google-github-actions/auth@v1'
+        with:
+          credentials_json: '${{ secrets.GOOGLE_CREDENTIALS }}'
+ 
+
+    # Set up google cloud SDK 
+      - name: 'Set up Cloud SDK'
+        uses: 'google-github-actions/setup-gcloud@v1'
+
+
+    # Verify setup has been successful 
+      - name: 'Use gcloud CLI'
+        run: 'gcloud info'
+
+
+    # Executes bash script which checks if Terraform state-file buckets already exist, if not, they are created. 
+      - name: 'Initialize the pre-requisites for Terraform configuration'
+        id: initialize
+        run:  bash ./bootstrap.sh
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }} 
+
+          
+    # Install the preferred version of Terraform CLI 
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: 1.2.9
+    
+
+    # Initializes the terraform configuration     
+      - name: 'Terraform Init'
+        id: init
+        run: terraform init
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}   
+
+
+    # Rewrites Terraform configuration files to a canonical format and style for readability (not a breaking check, will run if fails)
+      - name: 'Terraform format'
+        id: fmt
+        run: terraform fmt -check
+        continue-on-error: true
+
+
+    # Presents terraform configuration blueprint & identifies any inconsistencies before building infrastructure
+      - name: 'Terraform plan'
+        id: plan
+        run: terraform plan -lock=false
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}   
+
+
+    # Creates all specified cloud resources according to the terraform plan
+      - name: Terraform Apply
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: terraform apply -lock=false -auto-approve
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}

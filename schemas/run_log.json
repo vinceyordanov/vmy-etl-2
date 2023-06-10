@@ -1,0 +1,12 @@
+[
+    {
+      "mode": "NULLABLE",
+      "name": "last_run",
+      "type": "DATE"
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "last_cutoff",
+      "type": "DATE"
+    }
+]
